@@ -1,0 +1,5 @@
+A:B,C,D;
+B:C,D;
+C:A;
+D:C,S;
+S:A,B;
