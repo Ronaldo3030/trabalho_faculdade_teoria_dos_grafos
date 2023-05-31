@@ -1,3 +1,5 @@
+import algKahn
+import djikstra
 import preOrdem
 import posOrdem
 import emOrdem
@@ -120,6 +122,29 @@ def main():
             if(getRoute != ''):
                 print("##########################################################")
                 contracaoAresta.result(getRoute, v1, v2)
+                print("##########################################################")
+            else:
+                print("Opção inválida. Voltando ao menu principal!")
+        elif opcao == '8':
+            print("-----------------------------------------------------------")
+            getRoute = input("Informe o caminho do arquivo: ")
+            print("-----------------------------------------------------------")
+            if(getRoute != ''):
+                print("##########################################################")
+                algKahn.result(getRoute)
+                print("##########################################################")
+            else:
+                print("Opção inválida. Voltando ao menu principal!")
+        elif opcao == '9':
+            print("-----------------------------------------------------------")
+            getRoute = input("Informe o caminho do arquivo: ")
+            print("-----------------------------------------------------------")
+            print("-----------------------------------------------------------")
+            raiz = input("Informe o nó: ")
+            print("-----------------------------------------------------------")
+            if(getRoute != ''):
+                print("##########################################################")
+                djikstra.result(getRoute, raiz)
                 print("##########################################################")
             else:
                 print("Opção inválida. Voltando ao menu principal!")
