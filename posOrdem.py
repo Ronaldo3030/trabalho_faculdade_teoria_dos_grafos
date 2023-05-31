@@ -1,18 +1,25 @@
-import readTxt
-def posOrdem(graph, node, visited=None):
+import simpleReadTxt
+def posOrdem(tree, node, visited=None):
     if visited is None:
-        visited = []
+        visited = set()
+    if node in visited:
+        return []
+    visited.add(node)
     result = []
-    visited.append(node)
-    for neighbor in graph[node]:
-        if neighbor not in visited:
-            result.extend(posOrdem(graph, neighbor, visited))
+    if node in tree:
+        for child in tree[node]:
+            result.extend(posOrdem(tree, child, visited))
     result.append(node)
     return result
 
-def result(nameTxt, node):
-  graph = readTxt.readTxt(nameTxt)
-  result = posOrdem(graph, node)
-  print(result)
+def result(nameTxt, raiz):
+    tree_str = simpleReadTxt.read(nameTxt)
+    tree = {}
+    for line in tree_str.split(';'):
+        if line:
+            node, children = line.split(':')
+            tree[node] = children.split(',')
+    result = posOrdem(tree, raiz)
+    print(result)
   
 

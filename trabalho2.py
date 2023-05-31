@@ -29,9 +29,12 @@ def main():
             print("-----------------------------------------------------------")
             getRoute = input("Informe o caminho do arquivo: ")
             print("-----------------------------------------------------------")
-            if(getRoute != ''):
+            print("-----------------------------------------------------------")
+            raiz = input("Informe o nó raiz: ")
+            print("-----------------------------------------------------------")
+            if(getRoute != '' and raiz != ''):
                 print("##########################################################")
-                preOrdem.result(getRoute, 'A')
+                preOrdem.result(getRoute, raiz)
                 print("##########################################################")
             else:
                 print("Opção inválida. Voltando ao menu principal!")
@@ -39,9 +42,12 @@ def main():
             print("-----------------------------------------------------------")
             getRoute = input("Informe o caminho do arquivo: ")
             print("-----------------------------------------------------------")
-            if(getRoute != ''):
+            print("-----------------------------------------------------------")
+            raiz = input("Informe o nó raiz: ")
+            print("-----------------------------------------------------------")
+            if(getRoute != '' and raiz != ''):
                 print("##########################################################")
-                posOrdem.result(getRoute, 'A')
+                posOrdem.result(getRoute, raiz)
                 print("##########################################################")
             else:
                 print("Opção inválida. Voltando ao menu principal!")
@@ -49,9 +55,12 @@ def main():
             print("-----------------------------------------------------------")
             getRoute = input("Informe o caminho do arquivo: ")
             print("-----------------------------------------------------------")
-            if(getRoute != ''):
+            print("-----------------------------------------------------------")
+            raiz = input("Informe o nó raiz: ")
+            print("-----------------------------------------------------------")
+            if(getRoute != '' and raiz != ''):
                 print("##########################################################")
-                emOrdem.result(getRoute, 'A')
+                emOrdem.result(getRoute, raiz)
                 print("##########################################################")
             else:
                 print("Opção inválida. Voltando ao menu principal!")

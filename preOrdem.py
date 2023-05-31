@@ -1,16 +1,23 @@
-import readTxt
+import simpleReadTxt
 
-def preOrdem(graph, node, visited=None):
+def preOrdem(tree, node, visited=None):
     if visited is None:
-        visited = []
+        visited = set()
+    if node in visited:
+        return []
+    visited.add(node)
     result = [node]
-    visited.append(node)
-    for neighbor in graph[node]:
-        if neighbor not in visited:
-            result.extend(preOrdem(graph, neighbor, visited))
+    if node in tree:
+        for child in tree[node]:
+            result.extend(preOrdem(tree, child, visited))
     return result
 
-def result(nameTxt, node):
-  graph = readTxt.readTxt(nameTxt)
-  result = preOrdem(graph, node)
-  print(result)
+def result(nameTxt, raiz):
+    tree_str = simpleReadTxt.read(nameTxt)
+    tree = {}
+    for line in tree_str.split(';'):
+        if line:
+            node, children = line.split(':')
+            tree[node] = children.split(',')
+    result = preOrdem(tree, raiz)
+    print(result)
