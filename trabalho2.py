@@ -1,6 +1,7 @@
 import preOrdem
 import posOrdem
 import emOrdem
+import removeNode
 import removeVertice
 import fusaoVertice
 import contracaoVertice
@@ -68,9 +69,12 @@ def main():
             print("-----------------------------------------------------------")
             getRoute = input("Informe o caminho do arquivo: ")
             print("-----------------------------------------------------------")
-            if(getRoute != ''):
+            print("-----------------------------------------------------------")
+            raiz = input("Informe o que deseja remover: ")
+            print("-----------------------------------------------------------")
+            if(getRoute != '' and raiz != ''):
                 print("##########################################################")
-                removeVertice.result(getRoute, 'A')
+                removeNode.result(getRoute, raiz)
                 print("##########################################################")
             else:
                 print("Opção inválida. Voltando ao menu principal!")
@@ -78,9 +82,15 @@ def main():
             print("-----------------------------------------------------------")
             getRoute = input("Informe o caminho do arquivo: ")
             print("-----------------------------------------------------------")
+            print("-----------------------------------------------------------")
+            v1 = input("Informe o primeiro vertice: ")
+            print("-----------------------------------------------------------")
+            print("-----------------------------------------------------------")
+            v2 = input("Informe o segundo vertice: ")
+            print("-----------------------------------------------------------")
             if(getRoute != ''):
                 print("##########################################################")
-                fusaoVertice.result(getRoute, 'A', 'D')
+                fusaoVertice.result(getRoute, v1, v2)
                 print("##########################################################")
             else:
                 print("Opção inválida. Voltando ao menu principal!")
@@ -88,9 +98,12 @@ def main():
             print("-----------------------------------------------------------")
             getRoute = input("Informe o caminho do arquivo: ")
             print("-----------------------------------------------------------")
+            print("-----------------------------------------------------------")
+            v1 = input("Informe o vertice a ser removido: ")
+            print("-----------------------------------------------------------")
             if(getRoute != ''):
                 print("##########################################################")
-                contracaoVertice.result(getRoute, 'A')
+                contracaoVertice.result(getRoute, v1)
                 print("##########################################################")
             else:
                 print("Opção inválida. Voltando ao menu principal!")
@@ -98,9 +111,15 @@ def main():
             print("-----------------------------------------------------------")
             getRoute = input("Informe o caminho do arquivo: ")
             print("-----------------------------------------------------------")
+            print("-----------------------------------------------------------")
+            v1 = input("Informe o primeiro vertice: ")
+            print("-----------------------------------------------------------")
+            print("-----------------------------------------------------------")
+            v2 = input("Informe o segundo vertice: ")
+            print("-----------------------------------------------------------")
             if(getRoute != ''):
                 print("##########################################################")
-                contracaoAresta.result(getRoute, 'A', 'B')
+                contracaoAresta.result(getRoute, v1, v2)
                 print("##########################################################")
             else:
                 print("Opção inválida. Voltando ao menu principal!")
