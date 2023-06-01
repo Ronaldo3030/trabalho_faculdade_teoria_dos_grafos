@@ -6,5 +6,5 @@
 [X] - Realize a Contração de um vértice
 [X] - Realize a Contração de uma aresta
 [X] - Realize a Ordenação Topológica (algoritmo de Kahn)
-[ ] - Caminho Mínimo - Dijkstra
+[X] - Caminho Mínimo - Dijkstra
 [ ] - Caminho Mínimo - Bellman-Ford

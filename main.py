@@ -1,4 +1,5 @@
 import algKahn
+import belman
 import djikstra
 import preOrdem
 import posOrdem
@@ -145,6 +146,19 @@ def main():
             if(getRoute != ''):
                 print("##########################################################")
                 djikstra.result(getRoute, raiz)
+                print("##########################################################")
+            else:
+                print("Opção inválida. Voltando ao menu principal!")
+        elif opcao == '10':
+            print("-----------------------------------------------------------")
+            getRoute = input("Informe o caminho do arquivo: ")
+            print("-----------------------------------------------------------")
+            print("-----------------------------------------------------------")
+            raiz = input("Informe o nó: ")
+            print("-----------------------------------------------------------")
+            if(getRoute != ''):
+                print("##########################################################")
+                belman.result(getRoute, raiz)
                 print("##########################################################")
             else:
                 print("Opção inválida. Voltando ao menu principal!")

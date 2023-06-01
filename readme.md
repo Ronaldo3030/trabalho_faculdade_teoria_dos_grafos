@@ -10,6 +10,11 @@ Por exemplo, se você escolher a opção “1. Impressão em Pré-Ordem”, o pr
 
 Para sair do programa, escolha a opção “11. Sair do programa”.
 
+### Exemplo de caminho
+```
+c://Users//Computador//Documents//Trabalho_faculdade_teoria_dos_grafos//gra_arvore.txt
+```
+
 ## Formato do arquivo de grafo
 O programa lê grafos a partir de arquivos de texto no seguinte formato:
 
