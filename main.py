@@ -6,7 +6,6 @@ import posOrdem
 import emOrdem
 import removeNode
 import fusaoVertice
-import teste
 import contracaoVertice
 import contracaoAresta
 
@@ -17,11 +16,11 @@ def main():
         print("1. Impressão em Pré-Ordem")
         print("2. Impressão Pós-Ordem")
         print("3. Impressão EmOrdem")
-        print("4. Realize e remoção de um vértice de uma árvore")
-        print("5. Realize a Fusão de dois vértices")
-        print("6. Realize a Contração de um vértice")
-        print("7. Realize a Contração de uma aresta")
-        print("8. Realize a Ordenação Topológica (algoritmo de Kahn)")
+        print("4. Remoção de um vértice de uma árvore")
+        print("5. Fusão de dois vértices")
+        print("6. Contração de um vértice")
+        print("7. Contração de uma aresta")
+        print("8. Ordenação Topológica (algoritmo de Kahn)")
         print("9. Caminho Mínimo - Dijkstra")
         print("10. Caminho Mínimo - Bellman-Ford")
         print("11. Sair do programa")
@@ -158,7 +157,7 @@ def main():
             print("-----------------------------------------------------------")
             if(getRoute != ''):
                 print("##########################################################")
-                teste.result(getRoute, raiz)
+                belman.result(getRoute, raiz)
                 print("##########################################################")
             else:
                 print("Opção inválida. Voltando ao menu principal!")

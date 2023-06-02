@@ -1,61 +1,41 @@
-# import readTxt
+import belmanReadTxt
+def bellman_ford(graph, V, E, src):
+    dist = [float('inf')] * V
+    dist[src] = 0
 
-# def BellmanFord(grafo, origem):
-#     distancia = {}
-#     predecessor = {}
-#     for vertice in grafo:
-#         distancia[vertice] = float('inf')
-#         predecessor[vertice] = None
-#     distancia[origem] = 0
+    for i in range(V - 1):
+        for j in range(E):
+            u, v, w = graph[j]
+            if dist[u] != float('inf') and dist[u] + w < dist[v]:
+                dist[v] = dist[u] + w
 
-#     for _ in range(len(grafo) - 1):
-#         for vertice in grafo:
-#             for vizinho in grafo[vertice]:
-#                 if distancia[vizinho] > distancia[vertice] + grafo[vertice][vizinho]:
-#                     distancia[vizinho] = distancia[vertice] + grafo[vertice][vizinho]
-#                     predecessor[vizinho] = vertice
+    for j in range(E):
+        u, v, w = graph[j]
+        if dist[u] != float('inf') and dist[u] + w < dist[v]:
+            print("O grafo contém um ciclo de peso negativo")
+            return
 
-#     for vertice in grafo:
-#         for vizinho in grafo[vertice]:
-#             if distancia[vizinho] > distancia[vertice] + grafo[vertice][vizinho]:
-#                 return None, None
+    return dist
 
-#     return distancia, predecessor
+def result(nameFile, vert):
+    graph_str = belmanReadTxt.read(nameFile)
+    graph_list = graph_str.split(';')
+    graph = []
+    V = 0
+    for line in graph_list:
+        if line:
+            node, edges = line.split(':')
+            node = ord(node) - ord(vert)
+            V = max(V, node)
+            edges = edges.split(',')
+            for edge in edges:
+                v, w = edge.split('=')
+                v = ord(v) - ord(vert)
+                V = max(V, v)
+                w = int(w)
+                graph.append((node, v, w))
+    V += 1
+    E = len(graph)
 
-# def result(nameTxt, raiz):
-#   graph = readTxt.readTxt(nameTxt)
-#   distancia, predecessor = BellmanFord(graph, 'S')
-#   print(distancia)
-#   print(predecessor)
-
-def BellmanFord(grafo, origem):
-    distancia = {}
-    predecessor = {}
-    for vertice in grafo:
-        distancia[vertice] = float('inf')
-        predecessor[vertice] = None
-    distancia[origem] = 0
-
-    for _ in range(len(grafo) - 1):
-        for vertice in grafo:
-            for vizinho in grafo[vertice]:
-                if distancia[vizinho] > distancia[vertice] + grafo[vertice][vizinho]:
-                    distancia[vizinho] = distancia[vertice] + grafo[vertice][vizinho]
-                    predecessor[vizinho] = vertice
-
-    for vertice in grafo:
-        for vizinho in grafo[vertice]:
-            if distancia[vizinho] > distancia[vertice] + grafo[vertice][vizinho]:
-                return None, None
-
-    return distancia, predecessor
-
-grafo = {'A': {'B': 1, 'C': 4, 'D': 2, 'S': 5},
-         'B': {'A': 1, 'C': 2, 'D': 3, 'S': 2},
-         'C': {'A': 4, 'B': 2, 'D': 1},
-         'D': {'A': 2, 'B': 3, 'C': 1, 'S': 3},
-         'S': {'A': 5, 'B': 2, 'D': 3}}
-
-distancia, predecessor = BellmanFord(grafo, 'S')
-print(distancia)
-print(predecessor)
+    distances = bellman_ford(graph, V, E, 0)
+    print(distances)
