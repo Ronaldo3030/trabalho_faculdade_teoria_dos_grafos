@@ -5,8 +5,8 @@ import preOrdem
 import posOrdem
 import emOrdem
 import removeNode
-import removeVertice
 import fusaoVertice
+import teste
 import contracaoVertice
 import contracaoAresta
 
@@ -158,7 +158,7 @@ def main():
             print("-----------------------------------------------------------")
             if(getRoute != ''):
                 print("##########################################################")
-                belman.result(getRoute, raiz)
+                teste.result(getRoute, raiz)
                 print("##########################################################")
             else:
                 print("Opção inválida. Voltando ao menu principal!")
