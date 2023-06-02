@@ -27,6 +27,9 @@ def kahn_topological_sort(graph):
 
 
 def result(nameTxt):
-    graph = kahnReadTxt.read(nameTxt)
-    result = kahn_topological_sort(graph)
-    print(result)
+    try:
+        graph = kahnReadTxt.read(nameTxt)
+        result = kahn_topological_sort(graph)
+        print(result)
+    except FoundError:
+        print("Erro: Arquivo não encontrado")

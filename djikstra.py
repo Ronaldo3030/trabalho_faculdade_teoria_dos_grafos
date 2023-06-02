@@ -18,7 +18,10 @@ def dijkstra(graph, start):
     return distances
 
 def result(nameTxt, raiz):
-  graph = readTxt.readTxt(nameTxt)
-  distances = dijkstra(graph, raiz)
-  print(distances)
+    try:
+        graph = readTxt.readTxt(nameTxt)
+        distances = dijkstra(graph, raiz)
+        print(distances)
+    except:
+        print("Erro: Arquivo não encontrado")
   

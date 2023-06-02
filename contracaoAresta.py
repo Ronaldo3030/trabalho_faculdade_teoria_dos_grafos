@@ -13,6 +13,9 @@ def contract_edge(graph, edge):
     graph[u] = list(set(graph[u]))
 
 def result(nameTxt, v1, v2):
-  graph = readTxt.readTxt(nameTxt)
-  contract_edge(graph, (v1, v2))
-  print(graph)
+    try:
+        graph = readTxt.readTxt(nameTxt)
+        contract_edge(graph, (v1, v2))
+        print(graph)
+    except:
+        print("Erro: Arquivo não encontrado")

@@ -8,6 +8,9 @@ def removeVertice(graph, vertex):
     return graph
 
 def result(nameTxt, vertex):
-  graph = readTxt.readTxt(nameTxt)
-  result = removeVertice(graph, vertex)
-  print(result)
+    try:
+        graph = readTxt.readTxt(nameTxt)
+        result = removeVertice(graph, vertex)
+        print(result)
+    except:
+        print("Erro: Arquivo não encontrado")

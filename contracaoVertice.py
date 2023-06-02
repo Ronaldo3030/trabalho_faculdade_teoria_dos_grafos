@@ -16,7 +16,10 @@ def contract_vertex(graph, v):
     return graph
 
 def result(nameTxt, v1):
-  input_str = readTxt.readTxt(nameTxt)
-  graph = convertInput.convert_input_to_set(input_str)
-  new_graph = contract_vertex(graph, v1)
-  print(new_graph)
+    try:
+        input_str = readTxt.readTxt(nameTxt)
+        graph = convertInput.convert_input_to_set(input_str)
+        new_graph = contract_vertex(graph, v1)
+        print(new_graph)
+    except:
+        print("Erro: Arquivo não encontrado")

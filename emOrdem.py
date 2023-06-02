@@ -17,11 +17,14 @@ def emOrdem(tree, node, visited=None):
     return result
 
 def result(nameTxt, raiz):
-    tree_str = simpleReadTxt.read(nameTxt)
-    tree = {}
-    for line in tree_str.split(';'):
-        if line:
-            node, children = line.split(':')
-            tree[node] = children.split(',')
-    result = emOrdem(tree, raiz)
-    print(result)
+    try:
+        tree_str = simpleReadTxt.read(nameTxt)
+        tree = {}
+        for line in tree_str.split(';'):
+            if line:
+                node, children = line.split(':')
+                tree[node] = children.split(',')
+        result = emOrdem(tree, raiz)
+        print(result)
+    except:
+        print("Erro: Arquivo não encontrado")
